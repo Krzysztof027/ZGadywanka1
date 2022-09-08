@@ -2,28 +2,38 @@ package com.Klasa3P;
 
 import java.util.Scanner;
 
-public class Main
-{
-    public static void main(String[] args)
-    {
+public class Main {
+    public static void main(String[] args) {
         System.out.println("Witaj w Javie");
-        int wylosowana =(int)(Math.random()*100+1);
-        //random() losuje liczbę rzeczywistą z zakresu od <0,1)
-        //rzutowanie zawezające
-        double innaLiczba =wylosowana;//konwersja rozszerzająca
-        System.out.println("Wylosowano "+wylosowana);
+        int wylosowana = (int) (Math.random() * 100 + 1);
+        //system.out.println("Wylosowano "+wylosowana)
+        //zgaduj 10 razy chyba, że wcześniej ci się uda
+
         Scanner klawiatura = new Scanner(System.in);
-        System.out.println("Podaj liczbę");
         int wczytana;
-        wczytana = klawiatura.nextInt();//Pobieranie anstępnej liczb z klaiatury
-        System.out.println("wpisałeś"+wczytana);
-        if (wczytana == wylosowana)
+        boolean czyWygrana = false;
+        for (int i = 0; i < 10; i++)
         {
-            System.out.println("gratulację liczba znaleziona");
+            System.out.println("Podaj liczbę");
+            wczytana = klawiatura.nextInt();//Pobieranie anstępnej liczb z klaiatury
+            if (wczytana == wylosowana)
+            {
+                System.out.println("gratulację liczba znaleziona");
+                czyWygrana=true;
+                break;
+            }
+            if(wczytana<wylosowana)
+            {
+                System.out.println("Wpisz więcej");
+            }
+            else
+            {
+                System.out.println("Wpisz mniej");
+            }
         }
-        else
+        if(!czyWygrana)
         {
-            System.out.println("niestety nie udało się, ale ...");
+            System.out.println("Niestety, ale nie udalo się, ale...");
         }
     }
 }
