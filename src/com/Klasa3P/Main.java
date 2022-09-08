@@ -11,15 +11,13 @@ public class Main {
 
         Scanner klawiatura = new Scanner(System.in);
         int wczytana;
-        boolean czyWygrana = false;
-        while(!czyWygrana)
+        do
         {
             System.out.println("Podaj liczbę");
             wczytana = klawiatura.nextInt();//Pobieranie anstępnej liczb z klaiatury
             if (wczytana == wylosowana)
             {
                 System.out.println("gratulację liczba znaleziona");
-                czyWygrana=true;
                 break;
             }
             if(wczytana<wylosowana)
@@ -31,5 +29,6 @@ public class Main {
                 System.out.println("Wpisz mniej");
             }
         }
+        while(true);//dopóki warunek jest prawidłowy to wykonuj dalej pętlę
     }
 }
