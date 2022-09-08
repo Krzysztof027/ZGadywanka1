@@ -7,12 +7,12 @@ public class Main {
         System.out.println("Witaj w Javie");
         int wylosowana = (int) (Math.random() * 100 + 1);
         //system.out.println("Wylosowano "+wylosowana)
-        //zgaduj 10 razy chyba, że wcześniej ci się uda
+        //zgaduj tak długo aż zgadniesz
 
         Scanner klawiatura = new Scanner(System.in);
         int wczytana;
         boolean czyWygrana = false;
-        for (int i = 0; i < 10; i++)
+        while(!czyWygrana)
         {
             System.out.println("Podaj liczbę");
             wczytana = klawiatura.nextInt();//Pobieranie anstępnej liczb z klaiatury
@@ -30,10 +30,6 @@ public class Main {
             {
                 System.out.println("Wpisz mniej");
             }
-        }
-        if(!czyWygrana)
-        {
-            System.out.println("Niestety, ale nie udalo się, ale...");
         }
     }
 }
